@@ -54,10 +54,17 @@ def redis_data(redis_database_name):
         r.sadd(redis_database_name,data)
     return into_data
 
-def mysql_data(data,db_name):
-    conn = pymysql.Connect(post="127.0.0.1",port = 3306,user = "root",passwd = "Ljj281150",db = db_name)
-    def data_into():
-        cursor = conn.cursor()
+
+class Mysql_data():
+    def __init__(self,db_name):
+        self.conn = pymysql.Connect(post="127.0.0.1",port = 3306,user = "root",passwd = "Ljj281150",db = db_name)
+
+
+
+    def mysql_data(data,db_name):
+        conn = pymysql.Connect(post="127.0.0.1",port = 3306,user = "root",passwd = "Ljj281150",db = db_name)
+        def data_into():
+            cursor = conn.cursor()
         
 
 
